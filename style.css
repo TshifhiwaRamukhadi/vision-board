@@ -8,51 +8,62 @@ body{
     background:#f7f2f5;
     font-family:Segoe UI,sans-serif;
     padding:20px;
-    color:#4d3558;
+    color:#4b3657;
 }
 
 .board{
-    column-count:3;
+    columns:3 320px;
     column-gap:20px;
-    max-width:1500px;
+    max-width:1600px;
     margin:auto;
 }
 
-.card,
-.main-goal,
+.vision-card,
 .quote-card,
 .info-card{
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-    margin-bottom:20px;
     break-inside:avoid;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    margin-bottom:20px;
+    border-radius:25px;
+    overflow:hidden;
+    background:white;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
-.card img,
-.main-goal img{
+.vision-card{
+    position:relative;
+}
+
+.vision-card img{
     width:100%;
+    height:320px;
+    object-fit:cover;
     display:block;
 }
 
-.content{
-    padding:15px;
+.main-goal img{
+    height:520px;
 }
 
-.content h3{
-    color:#c05a91;
-    margin-bottom:10px;
-}
+.overlay{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
 
-.main-goal{
-    position:relative;
+    background:linear-gradient(
+        transparent,
+        rgba(0,0,0,0.85)
+    );
+
+    color:white;
+    padding:20px;
 }
 
 .goal-overlay{
     position:absolute;
     inset:0;
-    background:rgba(35,20,50,0.55);
+
+    background:rgba(0,0,0,0.45);
 
     display:flex;
     flex-direction:column;
@@ -61,12 +72,11 @@ body{
 
     text-align:center;
     color:white;
-
-    padding:20px;
+    padding:25px;
 }
 
 .goal-overlay h1{
-    font-size:2.5rem;
+    font-size:2.8rem;
     margin-bottom:10px;
 }
 
@@ -75,7 +85,12 @@ body{
 }
 
 .goal-overlay p{
+    font-size:1.3rem;
     margin-bottom:10px;
+}
+
+.goal-overlay span{
+    font-size:0.9rem;
 }
 
 .quote-card{
@@ -85,12 +100,12 @@ body{
     background:linear-gradient(
         135deg,
         #ffe4ef,
-        #efe5ff
+        #efe4ff
     );
 }
 
 .quote-card h2{
-    color:#c05a91;
+    color:#c45590;
 }
 
 .info-card{
@@ -98,7 +113,7 @@ body{
 }
 
 .info-card h3{
-    color:#c05a91;
+    color:#c45590;
     margin-bottom:15px;
 }
 
@@ -113,7 +128,7 @@ body{
 @media(max-width:1000px){
 
     .board{
-        column-count:2;
+        columns:2 250px;
     }
 
 }
@@ -121,7 +136,11 @@ body{
 @media(max-width:700px){
 
     .board{
-        column-count:1;
+        columns:1;
+    }
+
+    .goal-overlay h1{
+        font-size:2rem;
     }
 
 }
