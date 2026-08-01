@@ -1,118 +1,127 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    background: #f7f2f5;
-    font-family: "Segoe UI", sans-serif;
-    padding: 20px;
-    color: #4c3657;
+body{
+    background:#f7f2f5;
+    font-family:Segoe UI,sans-serif;
+    padding:20px;
+    color:#4d3558;
 }
 
-.board {
-    column-count: 3;
-    column-gap: 20px;
-    max-width: 1500px;
-    margin: auto;
+.board{
+    column-count:3;
+    column-gap:20px;
+    max-width:1500px;
+    margin:auto;
 }
 
 .card,
+.main-goal,
 .quote-card,
-.info-card,
-.main-goal {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    break-inside: avoid;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+.info-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:20px;
+    break-inside:avoid;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
 .card img,
-.main-goal img {
-    width: 100%;
-    display: block;
+.main-goal img{
+    width:100%;
+    display:block;
 }
 
-.text {
-    padding: 15px;
+.content{
+    padding:15px;
 }
 
-.text h3 {
-    color: #c45891;
-    margin-bottom: 10px;
+.content h3{
+    color:#c05a91;
+    margin-bottom:10px;
 }
 
-.main-goal {
-    position: relative;
+.main-goal{
+    position:relative;
 }
 
-.goal-text {
-    position: absolute;
-    inset: 0;
-    background: rgba(40,20,60,0.55);
+.goal-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(35,20,50,0.55);
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 
-    text-align: center;
-    color: white;
-    padding: 20px;
+    text-align:center;
+    color:white;
+
+    padding:20px;
 }
 
-.goal-text h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+.goal-overlay h1{
+    font-size:2.5rem;
+    margin-bottom:10px;
 }
 
-.goal-text h2 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+.goal-overlay h2{
+    margin-bottom:10px;
 }
 
-.quote-card {
-    padding: 35px;
-    text-align: center;
-    background: linear-gradient(
+.goal-overlay p{
+    margin-bottom:10px;
+}
+
+.quote-card{
+    padding:35px;
+    text-align:center;
+
+    background:linear-gradient(
         135deg,
-        #ffe5ef,
+        #ffe4ef,
         #efe5ff
     );
 }
 
-.quote-card h2 {
-    color: #c45891;
+.quote-card h2{
+    color:#c05a91;
 }
 
-.info-card {
-    padding: 20px;
+.info-card{
+    padding:25px;
 }
 
-.info-card h3 {
-    color: #c45891;
-    margin-bottom: 15px;
+.info-card h3{
+    color:#c05a91;
+    margin-bottom:15px;
 }
 
-.info-card ul {
-    padding-left: 20px;
+.info-card ul{
+    padding-left:20px;
 }
 
-.info-card li {
-    margin-bottom: 8px;
+.info-card li{
+    margin-bottom:10px;
 }
 
-@media (max-width: 1000px) {
-    .board {
-        column-count: 2;
+@media(max-width:1000px){
+
+    .board{
+        column-count:2;
     }
+
 }
 
-@media (max-width: 700px) {
-    .board {
-        column-count: 1;
+@media(max-width:700px){
+
+    .board{
+        column-count:1;
     }
+
 }
