@@ -5,156 +5,212 @@
 }
 
 body{
-    background:#f8f3f7;
-    font-family:Segoe UI, sans-serif;
-    padding:20px;
-    color:#4a3057;
+    background:#f7f1f6;
+    font-family:'Segoe UI',sans-serif;
+    color:#4b3657;
+    padding:25px;
 }
 
-.title{
-    text-align:center;
-    margin-bottom:25px;
-    color:#c0548b;
-}
-
-.vision-board{
-    columns:3 300px;
-    column-gap:20px;
+.board{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
     max-width:1600px;
     margin:auto;
 }
 
+/* GENERAL CARD */
+
 .card{
     background:white;
-    margin-bottom:20px;
-    border-radius:25px;
+    border-radius:24px;
     overflow:hidden;
-    break-inside:avoid;
-    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-5px);
 }
 
 .card img{
     width:100%;
     display:block;
+    object-fit:cover;
 }
 
-.caption{
-    padding:20px;
+.content{
+    padding:18px;
 }
 
-.caption h3{
-    color:#c0548b;
-    margin-bottom:10px;
+.content h3{
+    color:#c2558d;
+    margin-bottom:8px;
 }
+
+/* DREAM CARD */
 
 .dream-card{
     position:relative;
+    grid-column:span 1;
+}
+
+.dream-card img{
+    height:420px;
 }
 
 .dream-overlay{
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,0.45);
+    background:rgba(35,15,45,0.55);
 
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
+
     text-align:center;
 
     color:white;
-    padding:20px;
-}
 
-.dream-overlay h2{
-    font-size:2rem;
-    margin-bottom:10px;
-    animation:pulse 2s infinite;
-}
-
-.dream-overlay h3{
-    margin-bottom:10px;
-}
-
-.salary-card{
-    text-align:center;
-    padding:40px;
-    background:linear-gradient(
-    135deg,
-    #ffe4f0,
-    #f1e4ff
-    );
-}
-
-.salary-card h2{
-    color:#d94b87;
-    font-size:3rem;
-}
-
-.cert-card,
-.timeline,
-.bio{
     padding:25px;
 }
 
-.cert-card h3,
-.timeline h3,
-.bio h3{
-    color:#c0548b;
-    margin-bottom:15px;
+.dream-overlay h1{
+    font-size:2.3rem;
+    margin-bottom:10px;
+    animation:glow 2s infinite;
 }
 
-.cert-card ul{
-    padding-left:20px;
-}
-
-.cert-card li{
+.dream-overlay h2{
     margin-bottom:10px;
 }
 
-.milestone{
-    border-left:4px solid #d94b87;
+.dream-overlay p{
+    font-size:1.2rem;
+    margin-bottom:15px;
+}
+
+/* SALARY */
+
+.salary{
+    background:linear-gradient(
+        145deg,
+        #ffe4ef,
+        #f5eaff
+    );
+    text-align:center;
+    padding:40px;
+}
+
+.salary h2{
+    font-size:3rem;
+    color:#d54685;
+}
+
+.salary p{
+    margin-top:10px;
+}
+
+/* CERTIFICATIONS */
+
+.certifications{
+    padding:25px;
+}
+
+.certifications h3{
+    color:#c2558d;
+    margin-bottom:15px;
+}
+
+.certifications ul{
+    padding-left:20px;
+}
+
+.certifications li{
+    margin-bottom:10px;
+}
+
+/* TIMELINE */
+
+.timeline{
+    padding:25px;
+}
+
+.timeline h3{
+    color:#c2558d;
+    margin-bottom:18px;
+}
+
+.step{
+    border-left:4px solid #d54685;
     padding-left:15px;
     margin-bottom:15px;
 }
 
-.milestone strong{
+.step strong{
+    color:#d54685;
     display:block;
-    color:#d94b87;
+    margin-bottom:4px;
 }
+
+/* BIO */
 
 .bio{
-    background:#fdeaf5;
+    background:#fdebf5;
+    padding:25px;
 }
 
-@keyframes pulse{
-
-0%{
-transform:scale(1);
+.bio h3{
+    color:#c2558d;
+    margin-bottom:15px;
 }
 
-50%{
-transform:scale(1.05);
+.bio p{
+    line-height:1.8;
 }
 
-100%{
-transform:scale(1);
-}
+/* ANIMATION */
 
-}
+@keyframes glow{
 
-@media(max-width:900px){
-
-    .vision-board{
-        columns:2 250px;
+    0%{
+        text-shadow:0 0 5px white;
     }
 
-}
-
-@media(max-width:600px){
-
-    .vision-board{
-        columns:1;
+    50%{
+        text-shadow:
+            0 0 10px white,
+            0 0 20px white;
     }
 
+    100%{
+        text-shadow:0 0 5px white;
+    }
+}
+
+/* TABLET */
+
+@media(max-width:1100px){
+
+    .board{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .board{
+        grid-template-columns:1fr;
+    }
+
+    .dream-overlay h1{
+        font-size:1.8rem;
+    }
+
+    .salary h2{
+        font-size:2.2rem;
+    }
 }
