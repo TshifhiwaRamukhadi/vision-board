@@ -1,167 +1,96 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html{
-scroll-behavior:smooth;
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #ffe4f1, #f8e8ff, #ffffff);
+  color: #4a154b;
+  line-height: 1.6;
 }
 
-body{
-font-family:'Poppins',sans-serif;
-background:#0f172a;
-color:white;
-line-height:1.8;
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff4fa3, #a855f7);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
 }
 
-.hero{
-height:100vh;
-background:
-linear-gradient(
-135deg,
-rgba(255,79,163,0.9),
-rgba(139,92,246,0.9)
-),
-url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80");
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:20px;
+.hero-content {
+  max-width: 900px;
 }
 
-.hero-content{
-max-width:900px;
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
 }
 
-.hero h1{
-font-size:4rem;
-font-weight:800;
+.hero h2 {
+  margin-bottom: 20px;
 }
 
-.hero h2{
-font-size:1.5rem;
-margin:20px 0;
+section {
+  padding: 60px 10%;
 }
 
-.hero p{
-font-size:1.1rem;
-max-width:700px;
-margin:auto;
+h2 {
+  text-align: center;
+  color: #ff1493;
+  margin-bottom: 30px;
 }
 
-.btn{
-display:inline-block;
-padding:15px 35px;
-margin-top:30px;
-background:white;
-color:#ff4fa3;
-text-decoration:none;
-border-radius:50px;
-font-weight:bold;
+.timeline-container,
+.cert-grid,
+.identity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-section{
-padding:80px 10%;
+.card,
+.cert,
+.identity-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-section h2{
-text-align:center;
-margin-bottom:40px;
-color:#ff7ac4;
+.cert {
+  border-left: 5px solid #ff1493;
 }
 
-.intro{
-text-align:center;
+.identity-card {
+  text-align: center;
 }
 
-.timeline-container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+.quote {
+  background: linear-gradient(135deg, #ff4fa3, #a855f7);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
 }
 
-.card{
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(10px);
-padding:25px;
-border-radius:20px;
-border:1px solid rgba(255,255,255,0.15);
-transition:.3s;
+.quote p {
+  max-width: 800px;
+  margin: auto;
 }
 
-.card:hover{
-transform:translateY(-10px);
+footer {
+  background: #ff1493;
+  color: white;
+  text-align: center;
+  padding: 40px;
 }
 
-.cert-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-}
-
-.cert{
-background:#1e293b;
-padding:20px;
-border-left:5px solid #ff4fa3;
-border-radius:12px;
-}
-
-.identity-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:25px;
-}
-
-.identity-card{
-background:rgba(255,255,255,0.08);
-padding:30px;
-border-radius:20px;
-text-align:center;
-font-size:2rem;
-}
-
-.identity-card h3{
-margin-top:15px;
-font-size:1rem;
-}
-
-.quote{
-text-align:center;
-background:linear-gradient(
-135deg,
-#ff4fa3,
-#8b5cf6
-);
-}
-
-.quote p{
-font-size:1.3rem;
-max-width:900px;
-margin:auto;
-}
-
-footer{
-text-align:center;
-padding:60px 20px;
-background:#020617;
-}
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:2.5rem;
-}
-
-.hero h2{
-font-size:1.1rem;
-}
-
-.quote p{
-font-size:1rem;
-}
-
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
 }
