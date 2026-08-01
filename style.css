@@ -5,64 +5,65 @@
 }
 
 body{
-    background:#f7f1f6;
-    font-family:'Segoe UI',sans-serif;
-    color:#4b3657;
-    padding:25px;
+    background:#f6f1f5;
+    font-family:Segoe UI, sans-serif;
+    padding:20px;
 }
 
+/* Pinterest layout */
+
 .board{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+    columns:3 300px;
+    column-gap:20px;
     max-width:1600px;
     margin:auto;
 }
 
-/* GENERAL CARD */
-
-.card{
-    background:white;
-    border-radius:24px;
+.vision-card{
+    break-inside:avoid;
+    margin-bottom:20px;
+    border-radius:25px;
     overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-    transition:.3s ease;
+    background:white;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
 }
 
-.card:hover{
-    transform:translateY(-5px);
-}
-
-.card img{
+.vision-card img{
     width:100%;
     display:block;
-    object-fit:cover;
 }
 
-.content{
+.overlay{
     padding:18px;
 }
 
-.content h3{
-    color:#c2558d;
+.overlay h3{
+    color:#c65a93;
     margin-bottom:8px;
 }
 
-/* DREAM CARD */
+.overlay p{
+    margin-bottom:5px;
+}
 
-.dream-card{
+/* MAIN DREAM CARD */
+
+.main-goal{
     position:relative;
-    grid-column:span 1;
 }
 
-.dream-card img{
-    height:420px;
+.main-goal img{
+    height:500px;
+    object-fit:cover;
 }
 
-.dream-overlay{
+.goal-overlay{
     position:absolute;
     inset:0;
-    background:rgba(35,15,45,0.55);
+
+    background:rgba(31,18,46,0.55);
+
+    color:white;
 
     display:flex;
     flex-direction:column;
@@ -70,107 +71,63 @@ body{
     align-items:center;
 
     text-align:center;
-
-    color:white;
-
-    padding:25px;
+    padding:20px;
 }
 
-.dream-overlay h1{
-    font-size:2.3rem;
+.goal-overlay h1{
+    font-size:2.8rem;
     margin-bottom:10px;
     animation:glow 2s infinite;
 }
 
-.dream-overlay h2{
+.goal-overlay h2{
+    font-size:1.5rem;
+    margin-bottom:15px;
+}
+
+.goal-overlay p{
+    font-size:1.3rem;
     margin-bottom:10px;
 }
 
-.dream-overlay p{
-    font-size:1.2rem;
-    margin-bottom:15px;
-}
+/* salary */
 
-/* SALARY */
-
-.salary{
-    background:linear-gradient(
-        145deg,
-        #ffe4ef,
-        #f5eaff
-    );
+.salary-card{
     text-align:center;
-    padding:40px;
+    padding:50px 20px;
+
+    background:linear-gradient(
+        135deg,
+        #ffe3ef,
+        #efe4ff
+    );
 }
 
-.salary h2{
+.salary-card h2{
     font-size:3rem;
-    color:#d54685;
+    color:#d34688;
 }
 
-.salary p{
-    margin-top:10px;
-}
+/* list cards */
 
-/* CERTIFICATIONS */
-
-.certifications{
+.list-card{
     padding:25px;
 }
 
-.certifications h3{
-    color:#c2558d;
+.list-card h3{
+    color:#c65a93;
     margin-bottom:15px;
 }
 
-.certifications ul{
+.list-card ul{
     padding-left:20px;
 }
 
-.certifications li{
+.list-card li{
     margin-bottom:10px;
 }
 
-/* TIMELINE */
-
-.timeline{
-    padding:25px;
-}
-
-.timeline h3{
-    color:#c2558d;
-    margin-bottom:18px;
-}
-
-.step{
-    border-left:4px solid #d54685;
-    padding-left:15px;
-    margin-bottom:15px;
-}
-
-.step strong{
-    color:#d54685;
-    display:block;
-    margin-bottom:4px;
-}
-
-/* BIO */
-
-.bio{
-    background:#fdebf5;
-    padding:25px;
-}
-
-.bio h3{
-    color:#c2558d;
-    margin-bottom:15px;
-}
-
-.bio p{
-    line-height:1.8;
-}
-
-/* ANIMATION */
+/* animation */
 
 @keyframes glow{
 
@@ -180,8 +137,8 @@ body{
 
     50%{
         text-shadow:
-            0 0 10px white,
-            0 0 20px white;
+        0 0 15px white,
+        0 0 25px white;
     }
 
     100%{
@@ -189,28 +146,24 @@ body{
     }
 }
 
-/* TABLET */
+/* responsive */
 
-@media(max-width:1100px){
+@media(max-width:1000px){
 
     .board{
-        grid-template-columns:repeat(2,1fr);
+        columns:2 250px;
     }
-}
 
-/* MOBILE */
+}
 
 @media(max-width:700px){
 
     .board{
-        grid-template-columns:1fr;
+        columns:1;
     }
 
-    .dream-overlay h1{
-        font-size:1.8rem;
+    .goal-overlay h1{
+        font-size:2rem;
     }
 
-    .salary h2{
-        font-size:2.2rem;
-    }
 }
