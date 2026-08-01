@@ -1,169 +1,118 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background:#f6f1f5;
-    font-family:Segoe UI, sans-serif;
-    padding:20px;
+body {
+    background: #f7f2f5;
+    font-family: "Segoe UI", sans-serif;
+    padding: 20px;
+    color: #4c3657;
 }
 
-/* Pinterest layout */
-
-.board{
-    columns:3 300px;
-    column-gap:20px;
-    max-width:1600px;
-    margin:auto;
+.board {
+    column-count: 3;
+    column-gap: 20px;
+    max-width: 1500px;
+    margin: auto;
 }
 
-.vision-card{
-    break-inside:avoid;
-    margin-bottom:20px;
-    border-radius:25px;
-    overflow:hidden;
-    background:white;
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+.card,
+.quote-card,
+.info-card,
+.main-goal {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    break-inside: avoid;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-.vision-card img{
-    width:100%;
-    display:block;
+.card img,
+.main-goal img {
+    width: 100%;
+    display: block;
 }
 
-.overlay{
-    padding:18px;
+.text {
+    padding: 15px;
 }
 
-.overlay h3{
-    color:#c65a93;
-    margin-bottom:8px;
+.text h3 {
+    color: #c45891;
+    margin-bottom: 10px;
 }
 
-.overlay p{
-    margin-bottom:5px;
+.main-goal {
+    position: relative;
 }
 
-/* MAIN DREAM CARD */
+.goal-text {
+    position: absolute;
+    inset: 0;
+    background: rgba(40,20,60,0.55);
 
-.main-goal{
-    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+    padding: 20px;
 }
 
-.main-goal img{
-    height:500px;
-    object-fit:cover;
+.goal-text h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
-.goal-overlay{
-    position:absolute;
-    inset:0;
-
-    background:rgba(31,18,46,0.55);
-
-    color:white;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-    padding:20px;
+.goal-text h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
-.goal-overlay h1{
-    font-size:2.8rem;
-    margin-bottom:10px;
-    animation:glow 2s infinite;
-}
-
-.goal-overlay h2{
-    font-size:1.5rem;
-    margin-bottom:15px;
-}
-
-.goal-overlay p{
-    font-size:1.3rem;
-    margin-bottom:10px;
-}
-
-/* salary */
-
-.salary-card{
-    text-align:center;
-    padding:50px 20px;
-
-    background:linear-gradient(
+.quote-card {
+    padding: 35px;
+    text-align: center;
+    background: linear-gradient(
         135deg,
-        #ffe3ef,
-        #efe4ff
+        #ffe5ef,
+        #efe5ff
     );
 }
 
-.salary-card h2{
-    font-size:3rem;
-    color:#d34688;
+.quote-card h2 {
+    color: #c45891;
 }
 
-/* list cards */
-
-.list-card{
-    padding:25px;
+.info-card {
+    padding: 20px;
 }
 
-.list-card h3{
-    color:#c65a93;
-    margin-bottom:15px;
+.info-card h3 {
+    color: #c45891;
+    margin-bottom: 15px;
 }
 
-.list-card ul{
-    padding-left:20px;
+.info-card ul {
+    padding-left: 20px;
 }
 
-.list-card li{
-    margin-bottom:10px;
+.info-card li {
+    margin-bottom: 8px;
 }
 
-/* animation */
-
-@keyframes glow{
-
-    0%{
-        text-shadow:0 0 5px white;
-    }
-
-    50%{
-        text-shadow:
-        0 0 15px white,
-        0 0 25px white;
-    }
-
-    100%{
-        text-shadow:0 0 5px white;
+@media (max-width: 1000px) {
+    .board {
+        column-count: 2;
     }
 }
 
-/* responsive */
-
-@media(max-width:1000px){
-
-    .board{
-        columns:2 250px;
+@media (max-width: 700px) {
+    .board {
+        column-count: 1;
     }
-
-}
-
-@media(max-width:700px){
-
-    .board{
-        columns:1;
-    }
-
-    .goal-overlay h1{
-        font-size:2rem;
-    }
-
 }
